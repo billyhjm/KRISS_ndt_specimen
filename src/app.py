@@ -96,7 +96,7 @@ def save_data(n_clicks, data):
     collection.delete_many({})
     collection.insert_many(dff.to_dict('records'))
 
-    dff.to_csv('.\\parameters.csv', index=False)
+    dff.to_csv('.\\src\\parameters.csv', index=False)
 
     return "", dcc.Markdown(f'Saved Table {datetime.datetime.now()}')
 
@@ -109,7 +109,7 @@ def save_data(n_clicks, data):
     prevent_initial_call=True
 )
 def save_data(n_clicks):
-    parameters = pd.read_csv('.\\parameters.csv')
+    parameters = pd.read_csv('.\\src\\parameters.csv')
     collection.delete_many({})
     collection.insert_many(parameters.to_dict('records'))
 
