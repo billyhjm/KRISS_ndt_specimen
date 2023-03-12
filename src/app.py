@@ -21,7 +21,8 @@ app = dash.Dash(__name__, suppress_callback_exceptions=True,
                 external_stylesheets=['https://codepen.io/chriddyp/pen/bWLwgP.css'])
 server = app.server
 
-download_button = html.Button("Save as csv", style={"marginTop": 20})
+download_button = html.Button(
+    "Save as csv", style={"marginTop": 20, 'width': '250px'})
 download_component = dcc.Download()
 
 app.layout = html.Div([
@@ -31,8 +32,10 @@ app.layout = html.Div([
     # activated once/week or when page refreshed
     dcc.Interval(id='interval_db', interval=86400000 * 7, n_intervals=0),
 
-    html.Button("Send table to DB", id="send-table-to-db"),
-    html.Button('Add Row', id='adding-rows-btn', n_clicks=0),
+    html.Button("Send table to DB", id="send-table-to-db",
+                style={"marginTop": 20, 'width': '250px'}),
+    html.Button('Add Row', id='adding-rows-btn',
+                n_clicks=0, style={"marginTop": 20, 'width': '250px'}),
     download_button,
     download_component,
 
@@ -43,14 +46,14 @@ app.layout = html.Div([
             html.A('Select Files')
         ]),
         style={
-            'width': '35%',
-            'height': '60px',
-            'lineHeight': '60px',
+            'width': '750px',
+            'height': '50px',
+            'lineHeight': '50px',
             'borderWidth': '1px',
             'borderStyle': 'dashed',
             'borderRadius': '5px',
             'textAlign': 'center',
-            'margin': '5px',
+            "marginTop": 20,
         },
         # Allow multiple files to be uploaded
         multiple=False
