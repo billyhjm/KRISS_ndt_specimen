@@ -27,7 +27,7 @@ MarkupSafe==2.1.2
 nodeenv==1.7.0
 numpy
 packaging==21.0
-pandas==1.5.3
+pandas
 pipreqs==0.4.11
 platformdirs==3.1.1
 plotly==5.13.1
